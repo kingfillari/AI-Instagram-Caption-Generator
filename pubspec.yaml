@@ -1,0 +1,36 @@
+<<<<<<< HEAD
+name: ai_instagram_caption_generator
+description: AI Instagram Caption Generator
+publish_to: "none"
+
+environment:
+  sdk: '>=3.11.0 <4.0.0'
+
+=======
+>>>>>>> c5d350519ac8b08e10e728c757379a2ae8415a6d
+dependencies:
+  flutter:
+    sdk: flutter
+
+<<<<<<< HEAD
+  cupertino_icons: ^1.0.6
+  flutter_riverpod: ^2.4.9
+  http: ^1.2.0
+
+  firebase_core: ^2.32.0
+  firebase_auth: ^4.6.0
+  cloud_firestore: ^4.15.0
+
+  flutter_secure_storage: ^9.0.0
+  in_app_purchase: ^3.1.13
+  intl: ^0.19.0
+=======
+  flutter_riverpod: ^2.4.1
+  http: ^1.2.0
+  firebase_core: ^3.6.0
+  firebase_auth: ^4.15.0
+  cloud_firestore: ^4.13.0
+  flutter_dotenv: ^6.0.0
+  flutter_secure_storage: ^9.0.0
+  in_app_purchase: ^4.2.0
+>>>>>>> c5d350519ac8b08e10e728c757379a2ae8415a6d
