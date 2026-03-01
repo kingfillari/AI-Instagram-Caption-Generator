@@ -52,7 +52,7 @@ Built with **Flutter** (Android + iOS) and a **Node.js + Express backend**, with
 - Google AdMob (optional)
 
 ---
-
+```
 ## 📂 Project Structure
 
 
