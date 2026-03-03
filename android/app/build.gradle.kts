@@ -1,18 +1,38 @@
 plugins {
     id("com.android.application")
-    id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id("org.jetbrains.kotlin.android")
     id("dev.flutter.flutter-gradle-plugin")
+
+    // Apply the Google services plugin here
+    id("com.google.gms.google-services")
 }
 
 android {
-<<<<<<< HEAD
-    namespace = "com.example.ai_instagram_caption_generator"
-=======
-    namespace = "com.example.ai_caption_generator"
->>>>>>> c5d350519ac8b08e10e728c757379a2ae8415a6d
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    namespace = "com.kingfillari.aicaption"
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.kingfillari.aicaption"
+        minSdk = flutter.minSdkVersion
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0.0"
+
+        multiDexEnabled = true
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            signingConfig = signingConfigs.getByName("debug") // 🔥 Replace with release key before Play Store
+        }
+
+        debug {
+            isMinifyEnabled = false
+            isShrinkResources = false
+        }
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -20,33 +40,34 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmTarget = "17"
     }
 
-    defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-<<<<<<< HEAD
-        applicationId = "com.example.ai_instagram_caption_generator"
-=======
-        applicationId = "com.example.ai_caption_generator"
->>>>>>> c5d350519ac8b08e10e728c757379a2ae8415a6d
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+    buildFeatures {
+        buildConfig = true
     }
 
-    buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
 }
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    // Firebase BOM
+    implementation(platform("com.google.firebase:firebase-bom:34.9.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore")
+
+    // Google Play Billing
+    implementation("com.android.billingclient:billing:6.2.1")
+
+    // MultiDex
+    implementation("androidx.multidex:multidex:2.0.1")
 }

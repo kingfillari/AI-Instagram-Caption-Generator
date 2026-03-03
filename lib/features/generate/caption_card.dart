@@ -9,15 +9,24 @@ class CaptionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: ListTile(
-        title: Text(text),
-        trailing: IconButton(
-          icon: const Icon(Icons.copy),
-          onPressed: () {
-            Clipboard.setData(ClipboardData(text: text));
-            ScaffoldMessenger.of(context)
-                .showSnackBar(const SnackBar(content: Text("Copied")));
-          },
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            Text(text),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                Clipboard.setData(
+                    ClipboardData(text: text));
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(
+                  const SnackBar(content: Text("Copied!")),
+                );
+              },
+              child: const Text("Copy"),
+            )
+          ],
         ),
       ),
     );

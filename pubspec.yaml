@@ -1,36 +1,53 @@
-<<<<<<< HEAD
 name: ai_instagram_caption_generator
-description: AI Instagram Caption Generator
+description: AI powered Instagram caption generator SaaS app with subscriptions.
 publish_to: "none"
 
-environment:
-  sdk: '>=3.11.0 <4.0.0'
+version: 1.0.0+1
 
-=======
->>>>>>> c5d350519ac8b08e10e728c757379a2ae8415a6d
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
 dependencies:
   flutter:
     sdk: flutter
 
-<<<<<<< HEAD
+  # UI
   cupertino_icons: ^1.0.6
-  flutter_riverpod: ^2.4.9
-  http: ^1.2.0
 
+  # State Management
+  provider: ^6.1.2
+
+  # Firebase
   firebase_core: ^2.32.0
-  firebase_auth: ^4.6.0
-  cloud_firestore: ^4.15.0
+  firebase_auth: ^4.20.0
+  cloud_firestore: ^4.17.5
 
-  flutter_secure_storage: ^9.0.0
+  # Networking
+  http: ^1.2.1
+
+  # Environment
+  flutter_dotenv: ^5.1.0
+
+  # Local Storage
+  shared_preferences: ^2.2.3
+
+  # Payments (for SaaS billing)
   in_app_purchase: ^3.1.13
-  intl: ^0.19.0
-=======
-  flutter_riverpod: ^2.4.1
-  http: ^1.2.0
-  firebase_core: ^3.6.0
-  firebase_auth: ^4.15.0
-  cloud_firestore: ^4.13.0
-  flutter_dotenv: ^6.0.0
-  flutter_secure_storage: ^9.0.0
-  in_app_purchase: ^4.2.0
->>>>>>> c5d350519ac8b08e10e728c757379a2ae8415a6d
+
+  # Loading & UI helpers
+  flutter_spinkit: ^5.2.1
+
+  # Icons
+  font_awesome_flutter: ^10.7.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.2
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - .env

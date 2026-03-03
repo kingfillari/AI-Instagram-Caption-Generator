@@ -1,5 +1,9 @@
 class CaptionModel {
-  final String text;
+  final String content;
 
-  CaptionModel({required this.text});
+  CaptionModel({required this.content});
+
+  factory CaptionModel.fromJson(Map<String, dynamic> json) {
+    return CaptionModel(content: json['captions']);
+  }
 }
