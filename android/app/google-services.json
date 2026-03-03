@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "437263616872",
+    "project_id": "ai-instagram-caption-generator",
+    "storage_bucket": "ai-instagram-caption-generator.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437263616872:android:898324af289fc4c32724dd",
+        "android_client_info": {
+          "package_name": "com.kingfillari.aicaption"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChuweShJxRukihqDYt2hF4waRkBL6MqfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
